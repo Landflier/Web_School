@@ -1,0 +1,47 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<link rel="stylesheet" href="../static/css/frame2.css">
+<body>
+<font>
+<center><b> Bikehireo </b></center> <br> <br>
+	<p>
+Welcome to our easy-to-access and safe-to-use platform! Find your dream bike on a low price now!
+	</p>
+<br><br>
+	<p>
+	You can register as a user and use our search tool <a href="register.html"> here </a> 	
+		</p>
+	<br> <br>
+	
+</font>
+<script name="js-slideshow">
+    var i=0; //counter for images
+    var images=[];
+    var time=3000;
+    //image list
+    images[0]= '../static/images/Frame2/bike1.jpg';
+    images[1]= '../static/images/Frame2/bike2.jpg';
+    images[2]= '../static/images/Frame2/bike3.jpg';
+
+    //Change Image
+    function changeIMG(){
+        document.slide.src=images[i];
+        if (i < images.length - 1){
+            i++;
+        }else{
+            i=0;
+        }
+        setTimeout("changeIMG()", time);
+
+    }
+    window.onload=changeIMG;
+</script>
+
+<center>
+	<img name="slide" height="200px">
+	<!--<script src="../static/js/frame2_slideshow.js"></script>-->
+</center>
+</body>
+</html>

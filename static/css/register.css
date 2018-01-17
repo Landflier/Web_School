@@ -1,0 +1,19 @@
+body {
+    background-color:	#E0FFFF
+}
+th {
+    text-align: right;
+}
+#after-reg-msg {
+    display: hidden;
+}
+#register-btn {
+    width: 150px;
+    height: 60px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+    cursor: pointer;
+    padding: 10px;
+}

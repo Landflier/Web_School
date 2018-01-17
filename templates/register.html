@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../static/css/register.css">
+        <meta charset="utf-8">
+    </head>
+    <body >
+        <font>
+        <center><b> Welcome to our registration page! </b></center> <br> <br>
+
+        	<p> All you need to do here is to enter your user ID and password! Credit cards and payments will be absolutely safe because of our great security department. Welcome to our community!
+
+        </p>
+        	<table>
+        	<tbody><tr>
+        		<th><center> <img src="../static/images/Register/happyreg1.jpg" width="330" height="200" style="float:left"> </center> </th>
+        		<th> </th>
+        	<th> <center> <img src="../static/images/Register/happyreg2.jpg" width="330" height="200" style="float:right"> </center></th>
+        		</tr>
+        			</tbody></table>
+        <br><br>
+        <p>
+        If you need any help with the registration, please contact our support service. They will gladly help you!
+        </p>
+        </font>
+
+        <form id="register-form">
+            First name:<br>
+            <input type="text" name="firstname"><br>
+            Last name:<br>
+            <input type="text" name="lastname"><br>
+            Number of bikes you want to rent:<br>
+            <input type="number" name="bykes"><br>
+            Your phone number:<br>
+            <input type="text" name="bykes"><br>
+            <a id="register-btn">Submit</a>
+        </form>
+        <div id="after-reg-msg">
+            Thanks for being our client! Someone from our team will call you shortly!
+        </div>
+        <script src="../static/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript">
+            $('#register-btn').on('click', function () {
+                $('#register-form').hide();
+                $('#after-reg-msg').show();
+            });
+        </script>
+    </body>
+</html>

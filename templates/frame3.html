@@ -1,0 +1,119 @@
+<html><head>
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="../static/css/frame3.css">
+</head>
+			
+<body style="background-color:	#E0FFFF">
+<font>
+	<div><b>Pro tips for pro cyclists: </b> </div>
+<ul>
+	<li>Gear-up</li>
+	<li>Register in out website</li>
+	<li>Find the best bike</li>
+	<li>Hire it </li>
+	<li> Keep it clean and return it in good shape</li>
+	<li>Be happy! </li>
+	<script> 
+			document.myVars = {};
+			document.myVars.par = 0;
+	function createElementWithId( id ) {
+	var element = document.createElement('div');
+	element.id = id;
+	element.style.position = "absolute";
+	document.body.appendChild( element );
+}
+function moveElementWithId ( id, posX, posY ) {
+	var d = document.getElementById(id);
+	d.style.left = posX+'px';
+	d.style.top = posY+'px';
+}
+
+document.myVars.sx = 200;
+
+document.myVars.snowflakes = {};
+document.myVars.snowflakes.content = [];
+document.myVars.snowflakes.lastId = -1;
+
+var body = document.body,
+    html = document.documentElement;
+
+document.myVars.pageHeight = Math.max( body.scrollHeight, body.offsetHeight, 
+						html.clientHeight, html.scrollHeight, html.offsetHeight );
+						
+document.myVars.pageWidth = Math.max( body.scrollWidth, body.offsetWidth, 
+						html.clientWidth, html.scrollWidth, html.offsetWidth );
+
+
+document.myVars.snowflakes.generateNew = function() {
+	var element = {};
+	
+	element.posy = - Math.random()*( document.myVars.pageHeight );
+	element.posx = Math.random()*( document.myVars.pageWidth  - 30 );
+	
+	element.dx = 0;
+	element.dy = 1 + Math.random();
+	
+	document.myVars.snowflakes.lastId ++;
+	element.id = document.myVars.snowflakes.lastId;
+	
+	createElementWithId( element.id );
+	
+	var e = document.getElementById ( element.id );	
+	e.innerHTML = "happy";
+	moveElementWithId( element.id, element.posx, element.posy );
+	
+	console.log ( element.id, element.posx, element.posy );
+	
+	document.myVars.snowflakes.content.push( element );
+	
+};
+
+document.myVars.snowflakes.update = function() {
+	for ( var i = 0 ; i < document.myVars.snowflakes.content.length ; i ++ ) {
+		var crr = document.myVars.snowflakes.content[i];
+			
+		crr.dx += ( Math.random()-0.5 );
+		crr.dx *= 0.9;
+		
+		crr.posx += crr.dx;
+		crr.posy += crr.dy;
+		
+		if ( crr.posx > document.myVars.pageWidth-50 ) { crr.posx = 0; }
+		if ( crr.posy > document.myVars.pageHeight-20 ) { crr.posy = 0; }
+		
+		moveElementWithId( crr.id, crr.posx, crr.posy );
+		
+		document.myVars.snowflakes.content[i] = crr;
+	}
+};
+
+function update( ) {
+	document.myVars.pageHeight = Math.max( body.scrollHeight, body.offsetHeight, 
+							html.clientHeight, html.scrollHeight, html.offsetHeight );
+							
+	document.myVars.pageWidth = Math.max( body.scrollWidth, body.offsetWidth, 
+							html.clientWidth, html.scrollWidth, html.offsetWidth );
+
+
+	document.myVars.snowflakes.update();
+	setTimeout( update, 10 );
+}
+update();
+function party() {
+						if ( document.myVars.par == 1 ) { return; }
+						document.myVars.par = 1;
+						for ( var i = 0; i < 10 ; i ++ ) {
+							document.myVars.snowflakes.generateNew();
+						}
+					}
+</script>
+	<div> 
+		<button onclick = "party()" > Click for happiness </button>
+	</div>
+	
+	</ul>
+	 </p>
+<center> <img src="../static/images/Frame3/happycyclist.jpg" width="240" height="240" style="float:center"> </center>
+	</font>
+
+</body></html>
