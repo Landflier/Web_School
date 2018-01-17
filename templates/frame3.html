@@ -28,8 +28,6 @@ function moveElementWithId ( id, posX, posY ) {
 	d.style.top = posY+'px';
 }
 
-document.myVars.sx = 200;
-
 document.myVars.snowflakes = {};
 document.myVars.snowflakes.content = [];
 document.myVars.snowflakes.lastId = -1;
@@ -48,7 +46,7 @@ document.myVars.snowflakes.generateNew = function() {
 	var element = {};
 	
 	element.posy = - Math.random()*( document.myVars.pageHeight );
-	element.posx = Math.random()*( document.myVars.pageWidth  - 30 );
+	element.posx = Math.random()*( document.myVars.pageWidth  - 140 );
 	
 	element.dx = 0;
 	element.dy = 1 + Math.random();
@@ -61,9 +59,7 @@ document.myVars.snowflakes.generateNew = function() {
 	var e = document.getElementById ( element.id );	
 	e.innerHTML = "happy";
 	moveElementWithId( element.id, element.posx, element.posy );
-	
-	console.log ( element.id, element.posx, element.posy );
-	
+
 	document.myVars.snowflakes.content.push( element );
 	
 };
@@ -99,16 +95,16 @@ function update( ) {
 	setTimeout( update, 10 );
 }
 update();
-function party() {
+function hapiness() {
 						if ( document.myVars.par == 1 ) { return; }
 						document.myVars.par = 1;
-						for ( var i = 0; i < 10 ; i ++ ) {
+						for ( var i = 0; i < 150 ; i ++ ) {
 							document.myVars.snowflakes.generateNew();
 						}
 					}
 </script>
 	<div> 
-		<button onclick = "party()" > Click for happiness </button>
+		<button onclick = "hapiness()" > Click for happiness </button>
 	</div>
 	
 	</ul>
